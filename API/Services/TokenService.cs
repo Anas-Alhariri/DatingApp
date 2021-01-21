@@ -23,7 +23,7 @@ namespace API.Services
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
-        };
+            };
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -35,10 +35,10 @@ namespace API.Services
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
+
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(token);
-
         }
     }
 }
